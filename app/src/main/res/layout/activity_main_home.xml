@@ -1,15 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center">
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="首页"
-        android:textSize="32dp"
-        />
+    <include layout="@layout/custom_status_view" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp_2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <com.daluobo.com.core.flycotablayout.CommonTabLayout
+        android:id="@+id/tl_common_tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:background="#ffffff"
+        tl:tl_iconHeight="23dp"
+        tl:tl_iconWidth="23dp"
+        tl:tl_textSelectColor="@color/color_0e932e"
+        tl:tl_textUnselectColor="@color/color_333333"
+        tl:tl_textsize="12sp"
+        tl:tl_underline_gravity="TOP"
+        tl:tl_underline_color="#DDDDDD"
+        tl:tl_underline_height="0.5dp" />
 
 </LinearLayout>

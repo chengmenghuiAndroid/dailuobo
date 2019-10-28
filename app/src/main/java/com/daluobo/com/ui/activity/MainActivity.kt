@@ -1,4 +1,4 @@
-package com.daluobo.com.ui
+package com.daluobo.com.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 

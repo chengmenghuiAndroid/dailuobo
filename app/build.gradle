@@ -53,11 +53,10 @@ dependencies {
     implementation 'com.noober.background:core:1.6.0'
     implementation 'com.jakewharton:butterknife:10.2.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
-    // 基础依赖包，必须要依赖
+    //android 4.4以上沉浸式状态栏和沉浸式导航栏管理，包括状态栏字体颜色
     implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
-    implementation 'com.gyf.immersionbar:immersionbar-components:3.0.0'
-    // kotlin扩展（可选）
-    implementation 'com.gyf.immersionbar:immersionbar-ktx:3.0.0'
+    //今日头条屏幕适配方案
+    implementation 'me.jessyan:autosize:1.1.2'
     implementation 'com.squareup.okhttp3:okhttp:3.12.1'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.12.1'
     implementation 'com.github.bumptech.glide:glide:4.9.0'

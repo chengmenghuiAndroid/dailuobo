@@ -9,7 +9,6 @@ import android.os.Build;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-
 import com.daluobo.com.R;
 
 
