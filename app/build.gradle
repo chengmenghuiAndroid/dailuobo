@@ -1,4 +1,7 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 29
@@ -67,5 +70,7 @@ dependencies {
     implementation 'com.github.limedroid:ARecyclerView:v1.2.3'
     implementation 'com.blankj:rxbus:1.6'
     implementation 'com.trello.rxlifecycle2:rxlifecycle-android-lifecycle-kotlin:2.2.1'
+    //网络请求
+    implementation 'com.zhouyou:rxeasyhttp:2.1.5'
 
 }
