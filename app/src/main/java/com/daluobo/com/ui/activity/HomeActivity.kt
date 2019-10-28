@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
-import com.daluobo.com.R
+
 import com.daluobo.com.core.flycotablayout.listener.CustomTabEntity
 import com.daluobo.com.core.flycotablayout.listener.OnTabSelectListener
 import com.daluobo.com.entity.TabEntity
@@ -13,15 +13,20 @@ import com.daluobo.com.mvp.mvp.XActivity
 import com.daluobo.com.ui.fragment.*
 import com.daluobo.com.ui.present.PHomeActivity
 import kotlinx.android.synthetic.main.activity_main_home.*
+import com.blankj.utilcode.util.ToastUtils
+
 
 class HomeActivity : XActivity<PHomeActivity>() {
 
      private val mFragments = ArrayList<Fragment>()
      private val mTitles = arrayOf("菜单", "分类", "购物车", "取货", "我的")
      private val mTabEntities = ArrayList<CustomTabEntity>()
-     private val mIconUnselectedIds = intArrayOf(R.drawable.home_normal, R.drawable.home_normal, R.drawable.home_normal, R.drawable.home_normal, R.drawable.home_normal)
-     private val mIconSelectIds = intArrayOf(R.drawable.home_select, R.drawable.home_select, R.drawable.home_select,
-             R.drawable.home_select, R.drawable.home_select)
+     private val mIconUnselectedIds = intArrayOf(com.daluobo.com.R.drawable.home_normal, com.daluobo.com.R.drawable.home_normal, com.daluobo.com.R.drawable.home_normal, com.daluobo.com.R.drawable.home_normal, com.daluobo.com.R.drawable.home_normal)
+     private val mIconSelectIds = intArrayOf(com.daluobo.com.R.drawable.home_select, com.daluobo.com.R.drawable.home_select, com.daluobo.com.R.drawable.home_select,
+             com.daluobo.com.R.drawable.home_select, com.daluobo.com.R.drawable.home_select)
+
+    //返回键退出APP的时间标记
+    private var startTime: Long = 0
 
     override fun newP(): PHomeActivity {
        return PHomeActivity()
@@ -73,7 +78,7 @@ class HomeActivity : XActivity<PHomeActivity>() {
     }
 
     override fun getLayoutId(): Int {
-        return R.layout.activity_main_home
+        return com.daluobo.com.R.layout.activity_main_home
     }
 
     private inner class MyPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
@@ -91,5 +96,14 @@ class HomeActivity : XActivity<PHomeActivity>() {
         }
     }
 
+    override fun onBackPressed() {
+        val currentTime = System.currentTimeMillis()
+        if (currentTime - startTime >= 2000) {
+            ToastUtils.showShort("再按一次退出应用")
+            startTime = currentTime
+        } else {
+            finish()
+        }
+    }
 
 }

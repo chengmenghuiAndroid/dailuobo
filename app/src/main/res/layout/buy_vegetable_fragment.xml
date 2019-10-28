@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <com.stx.xhb.androidx.XBanner
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:AutoPlayTime="3000"
+        app:isAutoPlay="false"
+        app:isShowIndicatorOnlyOne="true"
+        app:isShowTips="true"
+        app:isHandLoop="true"
+        app:pageChangeDuration="800"
+        app:pointsContainerBackground="#442e2e2e"
+        app:pointsPosition="RIGHT"
+        app:pointsVisibility="true"
+        app:tipTextSize="12sp"/>
 
 </LinearLayout>

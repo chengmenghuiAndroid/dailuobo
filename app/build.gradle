@@ -71,5 +71,9 @@ dependencies {
     implementation 'com.trello.rxlifecycle2:rxlifecycle-android-lifecycle-kotlin:2.2.1'
     //网络请求
     implementation 'com.zhouyou:rxeasyhttp:2.1.5'
+    //工具类
+    implementation 'com.blankj:utilcodex:1.25.9'
+
+    implementation project(':xbanner')
 
 }
