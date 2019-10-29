@@ -8,7 +8,7 @@
     <com.stx.xhb.androidx.XBanner
         android:id="@+id/banner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         app:AutoPlayTime="3000"
         app:isAutoPlay="false"
         app:isShowIndicatorOnlyOne="true"
@@ -19,5 +19,7 @@
         app:pointsPosition="RIGHT"
         app:pointsVisibility="true"
         app:tipTextSize="12sp"/>
+
+
 
 </LinearLayout>

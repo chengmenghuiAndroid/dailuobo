@@ -73,6 +73,7 @@ dependencies {
     implementation 'com.zhouyou:rxeasyhttp:2.1.5'
     //工具类
     implementation 'com.blankj:utilcodex:1.25.9'
+    implementation 'com.facebook.fresco:fresco:1.13.0'
 
     implementation project(':xbanner')
 

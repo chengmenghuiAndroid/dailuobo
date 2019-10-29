@@ -7,6 +7,7 @@ import androidx.multidex.MultiDex;
 
 import com.daluobo.com.constant.AppConstant;
 import com.daluobo.com.mvp.net.Https;
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.zhouyou.http.EasyHttp;
 import com.zhouyou.http.cache.converter.SerializableDiskConverter;
 import com.zhouyou.http.model.HttpHeaders;
@@ -25,6 +26,8 @@ public class MyApplication extends Application {
         super.onCreate();
         EasyHttp.init(this);//默认初始化,必须调用
         EasyHttp();
+        //Fresco初始化
+        Fresco.initialize(this);
 
     }
 

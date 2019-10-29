@@ -52,6 +52,7 @@ class HomeActivity : XActivity<PHomeActivity>() {
 
         tl_common_tabLayout.setOnTabSelectListener(object :OnTabSelectListener{
             override fun onTabSelect(position: Int) {
+                vp_2.currentItem = position
             }
 
             override fun onTabReselect(position: Int) {
