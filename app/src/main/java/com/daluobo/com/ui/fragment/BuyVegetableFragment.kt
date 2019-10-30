@@ -4,11 +4,18 @@ import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
 import com.daluobo.com.R
+import com.daluobo.com.adapter.BuyVegetableAdapter
 import com.daluobo.com.mvp.mvp.XFragment
 import com.daluobo.com.ui.present.PBuyVegetable
 import com.facebook.drawee.view.SimpleDraweeView
 import com.stx.xhb.androidx.XBanner
 import kotlinx.android.synthetic.main.buy_vegetable_fragment.*
+import androidx.recyclerview.widget.GridLayoutManager
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+import com.daluobo.com.weight.FullyGridLayoutManager
+import com.trello.rxlifecycle2.RxLifecycle.bindUntilEvent
+
+
 
 
 /**
@@ -17,12 +24,24 @@ import kotlinx.android.synthetic.main.buy_vegetable_fragment.*
 class BuyVegetableFragment : XFragment<PBuyVegetable>() {
 
     private val mBannerUrls: MutableList<String> = mutableListOf<String>()
+    private var buyVegetableAdapter: BuyVegetableAdapter = BuyVegetableAdapter()
 
     override fun lazyLoad() {
     }
 
     override fun initData(savedInstanceState: Bundle?) {
         initBanner()
+        initRv()
+    }
+
+    private fun initRv() {
+
+
+
+        val gridLayoutManager = FullyGridLayoutManager(context, 3)
+        rl_menu.layoutManager = gridLayoutManager
+        rl_menu.adapter =  buyVegetableAdapter
+
     }
 
     override fun getLayoutId(): Int {
